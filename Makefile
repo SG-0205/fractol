@@ -6,7 +6,7 @@
 #    By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 16:28:49 by sgoldenb          #+#    #+#              #
-#    Updated: 2024/04/29 15:54:32 by sgoldenb         ###   ########.fr        #
+#    Updated: 2024/05/11 14:57:20 by sgoldenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ MAKEFLAGS += --silent
 
 NAME = fractol
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g -O3
 LDFLAGS = -Lincludes/libft -Lincludes/minilibx-linux
 LIBS = -lft -lmlx_Linux -lXext -lX11 -lm -lz
 

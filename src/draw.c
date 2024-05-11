@@ -6,7 +6,7 @@
 /*   By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:27:44 by sgoldenb          #+#    #+#             */
-/*   Updated: 2024/04/17 18:00:26 by sgoldenb         ###   ########.fr       */
+/*   Updated: 2024/05/11 14:58:54 by sgoldenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int	fract_parse(t_fractol *data, double real, double imaginary)
 {
-	int	interations;
+	int	iterations;
 
+	iterations = 0;
 	if (data->fract_id == FID_MANDELBROT)
-		interations = mandelbrot(real, imaginary);
+		iterations = mandelbrot(real, imaginary);
 	if (data->fract_id == FID_JULIA)
-		interations = julia(real, imaginary, data);
-	return (interations);
+		iterations = julia(real, imaginary, data);
+	return (iterations);
 }
 
 //B = 0 G = 8 R = 16 T = 24
