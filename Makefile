@@ -6,7 +6,7 @@
 #    By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 16:28:49 by sgoldenb          #+#    #+#              #
-#    Updated: 2024/04/17 17:42:56 by sgoldenb         ###   ########.fr        #
+#    Updated: 2024/04/29 15:54:32 by sgoldenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,15 @@ LIBS = -lft -lmlx_Linux -lXext -lX11 -lm -lz
 SRC_DIR = src
 INC_DIR = includes
 
-SRCS = julia_utils.c draw.c fractals.c graphics.c fractol.c data.c hooks.c utils.c key_actions.c
+SRCS = julia_utils.c draw.c fractals.c graphics.c fractol.c data.c hooks.c utils.c key_actions.c mouse_hooks.c
 OBJS = $(addprefix $(SRC_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
+
+debug: mlx libft $(OBJS)
+	@echo "\n$(INFO_MESSAGE)Compilation fractol"
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) includes/minilibx-linux/libmlx.a $(LDFLAGS) $(LIBS) || { echo "$(ERROR_MESSAGE)Erreur de compilation fractol"; exit $?; }
+	@echo "$(SUCCESS_MESSAGE)FRACTOL OK\n"
 
 $(NAME): norminette mlx libft $(OBJS)
 	@echo "\n$(INFO_MESSAGE)Compilation fractol"

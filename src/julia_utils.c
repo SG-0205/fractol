@@ -6,7 +6,7 @@
 /*   By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:54:34 by sgoldenb          #+#    #+#             */
-/*   Updated: 2024/04/17 18:09:51 by sgoldenb         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:00:54 by sgoldenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void	print_coordinates(t_fractol *data)
 	ft_printf("////////// X_Y_Z //////////\n");
 	ft_printf("x / y\t %f / %f\n", data->fract_mr, data->fract_mi);
 	ft_printf("X / Y\t %f / %f\n", data->fract_mxr, data->fract_mxi);
+	ft_printf("Z_FACTOR\t%d\n", data->zoom_factor);
 	ft_printf("LSD = %d\n\n", data->color_smooth);
 }

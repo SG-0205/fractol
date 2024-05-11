@@ -6,7 +6,7 @@
 /*   By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:57:19 by sgoldenb          #+#    #+#             */
-/*   Updated: 2024/04/17 18:16:21 by sgoldenb         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:10:39 by sgoldenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	clear_data(t_fractol *data, char *err_src, int error)
 	}
 	if (err_src)
 		(ft_printf("%s : %s\n", err_src, strerror(error)), exit(error));
-	else
+	else if (error != 0)
 		ft_printf("%s\n", strerror(error));
 	free(data);
 	exit(error);
@@ -65,6 +65,7 @@ t_bool	init_data(t_fractol *data)
 	data->color_bank = NULL;
 	data->color_buff = NULL;
 	data->color_front = 1;
+	data->zoom_factor = 0;
 	data->julia_id = 21;
 	data->color_back = 10;
 	data->fract_mxi = 0;

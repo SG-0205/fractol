@@ -6,7 +6,7 @@
 /*   By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 14:06:51 by sgoldenb          #+#    #+#             */
-/*   Updated: 2024/04/17 18:04:36 by sgoldenb         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:56:16 by sgoldenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	reset_view(t_fractol *data)
 	data->fract_mxi = 4;
 	data->fract_mxr = 4;
 	data->fract_mr = -4;
+	data->zoom_factor = 0;
 }
 
 int	name_to_id(char *name)

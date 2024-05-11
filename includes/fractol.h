@@ -6,7 +6,7 @@
 /*   By: sgoldenb <sgoldenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:30:27 by sgoldenb          #+#    #+#             */
-/*   Updated: 2024/04/17 18:06:52 by sgoldenb         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:41:54 by sgoldenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_fractol
 	char	*img_data;
 	int		win_w;
 	int		win_h;
+	int		zoom_factor;
 	int		color_front;
 	int		color_back;
 	int		*color_bank;
@@ -85,7 +86,7 @@ void		update_julia(t_fractol *data);
 int			mandelbrot(double real, double imaginary);
 int			julia(double z_real, double z_imaginary, t_fractol *data);
 void		update_xy(t_fractol *data, int side, double len);
-void		update_z(t_fractol *data, double len);
+void		update_z(t_fractol *data, double len, int code);
 void		set_colors(t_fractol *data, int background, int front);
 void		write_colors(int *container, int nb_colors, t_fractol *data);
 int			split_colors(int start, int end, double coef);
@@ -97,5 +98,6 @@ void		reset_view(t_fractol *data);
 void		update_starting_point(t_fractol *data);
 void		update_colors(t_fractol *data, int key);
 void		update_julia(t_fractol *data);
+int			mouse_hooks(int code, int x, int y, t_fractol *data);
 
 #endif
